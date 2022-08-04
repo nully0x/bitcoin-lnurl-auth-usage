@@ -59,13 +59,13 @@ app.get(
   function (req: Request, res: Response, next: any) {
     if (req.user) {
       // Already authenticated.
-      return res.json({ error: "already logged in" });
+      return res.json({ mess: "already logged in" });
     }
     next();
   },
   new LnurlAuth.Middleware({
-    callbackUrl: "https://83b4-197-210-76-53.eu.ngrok.io/login",
-    cancelUrl: "https://83b4-197-210-76-53.eu.ngrok.io/",
+    callbackUrl: `${config.endpoint}/login`,
+    cancelUrl: `${config.endpoint}/`,
   })
 );
 
@@ -73,7 +73,7 @@ app.get("/logout", function (req: Request, res: Response, next: any) {
   if (req.user) {
     // Already authenticated.
     req.session.destroy();
-    return res.send({ mess: "logged out" });
+    return res.send({ message: "logged out" });
   }
   next();
 });
