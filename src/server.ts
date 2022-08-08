@@ -1,4 +1,5 @@
-import express, { Express, Request, Response } from "express";
+const express = require("express");
+import { Express, Request, Response } from "express";
 const LnurlAuth = require("passport-lnurl-auth");
 const passport = require("passport");
 const session = require("express-session");
