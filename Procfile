@@ -1,1 +1,1 @@
-web:ts-node-dev --respawn --transpile-only ./src/server.ts
+web:yarn run dev
