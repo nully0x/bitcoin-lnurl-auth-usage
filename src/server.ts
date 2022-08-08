@@ -73,7 +73,12 @@ app.get(
 app.get("/logout", function (req: Request, res: Response, next: any) {
   if (req.user) {
     // Already authenticated.
-    req.session.destroy();
+    req.session.destroy(function (err: any) {
+      if (err) {
+        return next(err);
+      }
+      res.redirect(`${config.endpoint}/`);
+    });
     return res.send({ message: "logged out" });
   }
   next();
