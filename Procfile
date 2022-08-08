@@ -1,1 +1,1 @@
-web:tsc && node ./src/server.ts
+web:ts-node-dev --respawn --transpile-only ./src/server.ts
