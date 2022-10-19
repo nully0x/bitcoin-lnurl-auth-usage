@@ -8,4 +8,4 @@ Heavily on Typescript
 
 Reconfigure to persist to a database instead of Map Object in memory
 
-Rescale to return json which can then be processed into qr code on the from end instead of html/text format returned by default to the client.
+Rescale to return json which can then be processed into qr code on the frontend instead of html/text format returned by default to the client.
